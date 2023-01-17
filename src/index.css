@@ -2,3 +2,12 @@
     margin: 0;
     font-family: 'Ubuntu', sans-serif;;
 }
+
+.main {
+    min-height: 100vh;
+    padding: 0 2% 0 2%;
+}
+
+.body {
+    background-color: rgba(204, 204, 204, 0.308);
+}

@@ -1,0 +1,45 @@
+footer {
+    padding: 0 2% 0 2%;
+    height: 75px;
+    color: rgb(255, 255, 255);
+    background: #000000;
+
+    .container {
+        margin: auto;
+        height: 100%;
+        max-width: 1440px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .copyright {
+            > span {
+                padding-left: 10px;
+
+                &:first-child {
+                    padding-left: 0px;
+                    padding-right: 10px;
+                }
+            }
+        }
+
+        .links{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            > a {
+                padding: 7px;
+
+                &:first-child {
+                    padding: 0px;
+                    filter: invert(0.95);
+                }
+
+                &:last-child {
+                    padding-right: 0px;
+                }
+            }
+        }
+    }
+}

@@ -26,19 +26,17 @@ const Header = () => {
                     </ul>
                 </nav>
             </div>
-            <div className="search">
-                <form className="" role="search">
-                    <input
-                        className="form-control me-2"
-                        type="search"
-                        placeholder="Search"
-                        aria-label="Search"
-                    />
-                    <button className={styles.button} type="submit">
-                        Search
-                    </button>
-                </form>
-            </div>
+            <form className={styles.searchContainer} role="search">
+                <input
+                    className={styles.searchInput}
+                    type="search"
+                    placeholder="Search"
+                    aria-label="Search"
+                />
+                <button className={styles.button} type="submit">
+                    Search
+                </button>
+            </form>
         </div>
     </header>
   )
