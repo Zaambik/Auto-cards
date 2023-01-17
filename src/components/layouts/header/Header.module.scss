@@ -1,0 +1,35 @@
+header {
+    height: 100px;
+    background-color: rgb(54, 54, 54);
+}
+
+.container {
+    margin: auto;
+    height: 100%;
+    max-width: 1440px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    > div {
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar {
+        display: flex;
+        gap: 40px;
+
+        > li {
+            list-style: none;
+
+            a {
+                font-size: 20px;
+                font-weight: 500;
+                color: #ffffff;
+                text-decoration: none;
+            }
+        }
+    }
+}

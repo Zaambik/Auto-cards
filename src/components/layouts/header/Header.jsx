@@ -1,59 +1,47 @@
-import React from 'react'
+import { useState } from 'react'
 
-import './Header.scss'
+import styles from './Header.module.scss'
+import imgLogo from '../../../assets/img/logo.png'
+
 
 const Header = () => {
   return (
     <header>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div className="container">
-                <a className="navbar-brand p-0" href="index.html">
-                    <img src="лого к сайту.png" alt="logo" width="50" />
+        <div className={styles.container}>
+            <div>
+                <a className="logo" href="index.html">
+                    <img src={imgLogo} alt="logo" width="75" />
                 </a>
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="index.html">Home</a>
+                <nav> 
+                    <ul className={styles.navbar}>
+                        <li>
+                            <a href="#">Home</a>
                         </li>
-                        <li className="nav-item">
-                            <a className="nav-link" src="">Art cards</a>
+                        <li>
+                            <a href="#">Art cards</a>
                         </li>
-                        <li className="nav-item dropdown">
-                            <a
-                            className="nav-link dropdown-toggle"
-                            href="#"
-                            role="button"
-                            data-bs-toggle="dropdown"
-                            aria-expanded="false"
-                            >
-                            What else?
-                            </a>
-                            {/* <ul className="dropdown-menu">
-                            <li><a className="dropdown-item" href="https://vk.com/zaambik">Developer</a></li>
-                            <li><a className="dropdown-item" href="#">About us</a></li>
-                            <li><hr className="dropdown-divider" /></li>
-                            <li>
-                                <a className="dropdown-item" href="https://vk.com/bur_mister">Support</a>
-                            </li>
-                            </ul> */}
+                        <li>
+                            <a href="#">What else?</a>
                         </li>
                     </ul>
-                    <form className="d-flex" role="search">
+                </nav>
+            </div>
+            <div className="search">
+                <form className="" role="search">
                     <input
                         className="form-control me-2"
                         type="search"
                         placeholder="Search"
                         aria-label="Search"
                     />
-                    <button className="btn btn-outline-success" type="submit">
+                    <button className={styles.button} type="submit">
                         Search
                     </button>
-                    </form>
-                </div>
+                </form>
             </div>
-        </nav>
+        </div>
     </header>
   )
 }
 
-export default Header;
+export default Header
