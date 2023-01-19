@@ -21,7 +21,7 @@ const Cards = ({img, h, text}) => {
             <p className="card-text">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum doloribus inventore eligendi in, ea, sapiente adipisci dolores earum soluta nam aperiam doloremque ratione, possimus labore ab quasi architecto fugiat necessitatibus.
             </p>
-            <button href="#" className="btn btn-dark">Look this art</button>
+            <button href="#" className={ styles.cardBtn }>Look this art</button>
         </div>
     </div>
   )
