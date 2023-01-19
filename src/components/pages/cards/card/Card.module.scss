@@ -1,0 +1,26 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    color: rgb(219, 219, 219);
+    background-color: rgba(0, 0, 0, 0.945);
+    border-radius: 25px;
+
+    >img {
+        width: 100%;
+        border-radius: 25px;
+    }
+
+    .cardText {
+        padding: 8% 5% 7% 5%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+
+        text-align: center;
+    }
+
+}

@@ -6,17 +6,16 @@ import imgCard3 from '../img/card3.png'
 import styles from './Card.module.scss'
 
 
-const Cards = () => {
+const Cards = ({img, h, text}) => {
 
   return (
-    <div className="card">
+    <div className={ styles.card }>
         <img
             src={ imgCard1 }
-            className="card-img-top"
             alt="INVALID CONTENT(Изображение не загружено)"
             width="400px"
         />
-        <div className="card-body">
+        <div className={ styles.cardText }>
             <h3 className="card-title">
             Dark forest</h3>
             <p className="card-text">
