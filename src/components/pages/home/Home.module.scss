@@ -14,7 +14,7 @@
 
         border-radius: 50%;
         box-shadow: 0 0 10px rgb(10, 132, 207);
-        transition: 1.5s linear;
+        transition: 1.2s linear;
 
         object-fit: cover;
 
@@ -53,12 +53,14 @@
             border-radius: 20px;
 
             background-color:  rgb(54, 54, 54);
+
             color: white;
 
             font-size: 20px;
             text-decoration: none;
 
-            transition: all 0.s ease-in-out;
+            transition: all 0.5s ease-in-out;
+            
 
             &:hover {
                 border: 1px solid black;

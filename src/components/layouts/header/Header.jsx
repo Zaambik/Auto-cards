@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 import styles from './Header.module.scss'
 import imgLogo from '../../../assets/img/logo.png'
@@ -9,19 +10,19 @@ const Header = () => {
     <header>
         <div className={styles.container}>
             <div>
-                <a className="logo" href="index.html">
+                <Link className="logo" to="/">
                     <img src={imgLogo} alt="logo" width="75" />
-                </a>
+                </Link>
                 <nav> 
                     <ul className={styles.navbar}>
                         <li>
-                            <a href="#">Home</a>
+                            <Link to="/">Home</Link>
                         </li>
                         <li>
-                            <a href="#">Art cards</a>
+                            <Link to="/cards">Art cards</Link>
                         </li>
                         <li>
-                            <a href="#">What else?</a>
+                            <Link to="/">What else?</Link>
                         </li>
                     </ul>
                 </nav>
