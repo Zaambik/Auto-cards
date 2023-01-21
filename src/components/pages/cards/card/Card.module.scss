@@ -3,6 +3,8 @@
 
     width: 450px; 
     height: 540px;
+    margin-top: 25%;
+    margin-left: 20%;
 
     display: flex; 
     flex-direction: column; 
@@ -11,13 +13,14 @@
     
     color: rgb(204, 204, 204); 
     background-color: rgb(70, 70, 70); 
-    border-radius: 25px; 
+    border-radius: 35px; 
     
     transition: all 0.5s ease-in-out;
 
     &:hover {
         height: 800px;
         background-color: rgb(39, 39, 39);
+        border-radius: 20px;
     }    
 
     .imgWrapper {
@@ -112,5 +115,4 @@
     &:hover .cardText div a {
         opacity: 1;
     }
- 
 }

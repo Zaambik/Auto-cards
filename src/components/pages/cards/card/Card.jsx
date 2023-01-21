@@ -5,9 +5,8 @@ import imgCard2 from '../img/card2.png'
 import imgCard3 from '../img/card3.png' 
 import styles from './Card.module.scss' 
  
- 
 const Cards = ({img, h, text}) => { 
- 
+  
   return ( 
     <div className={ styles.card }> 
       <div className={ styles.imgWrapper }><img 
