@@ -1,0 +1,19 @@
+
+.container {
+    margin: auto;
+    padding-top: 5%;
+
+    max-width: 1440px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    @media screen and (max-width: 950px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        gap: 20px;
+    }
+}
+

@@ -47,6 +47,16 @@ header {
                     text-decoration: none;
                 }
             }
+
+            .activePage {
+                background-color: #fff;
+                box-shadow: 0px 0px 12px 1px black;
+                color: black;
+    
+                & > a {
+                   color: black;
+                }
+            }
         }
     
         .searchContainer {

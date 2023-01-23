@@ -9,21 +9,30 @@
     align-items: center;
     gap: 40px;
 
-    .image {
-        width: 600px;
+    .imgWrapper {
 
+        width: 600px;
+        height: 600px;
+        
         border-radius: 50%;
         box-shadow: 0 0 10px rgb(10, 132, 207);
-        transition: 1.2s linear;
 
-        object-fit: cover;
+        overflow: hidden;
 
-        &:hover {
-            border-radius: 0;
-            border-radius: 20%;
-            transition: 1s linear;
-        }
-    } 
+        .image {
+            width: 100%;
+    
+            box-shadow: 0 0 10px rgb(10, 132, 207);
+
+            transition: 1.2s linear;
+        
+            &:hover {
+                transition: 1s linear;
+                transform: scale(1.1);
+            }
+        } 
+
+    }
 
     > h2 {
         font-size: 40px;

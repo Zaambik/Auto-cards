@@ -1,0 +1,45 @@
+
+.container {
+   margin: auto;
+   padding-top: 5%;
+
+   max-width: 1440px;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 60px;
+
+   .map {
+      width: 1000px;
+      height: 500px;
+
+      border: 5px solid black;
+      border-radius: 25px;
+   }
+
+   .contacts {
+      font-size: 20px;
+      max-width: 1000px;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      > text {
+         display: flex;
+         flex-direction: column;
+         gap: 10px;
+
+         h3 {
+            font-size: 28px;
+            gap: 10px;
+         }
+
+         ul {
+            padding: 0;
+            list-style: none;
+         }
+      }
+   }
+}

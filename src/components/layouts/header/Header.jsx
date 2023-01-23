@@ -4,8 +4,13 @@ import { Link } from 'react-router-dom'
 import styles from './Header.module.scss'
 import imgLogo from '../../../assets/img/logo.png'
 
+const pages = [
+    {name: 'Home', path: '/'},
+    {name: 'Catalog', path: '/catalog'},
+    {name: 'Contacts', path: '/contacts'}
+]
 
-const Header = () => {
+const Header = ({activePage}) => {
   return (
     <header>
         <div className={styles.container}>
@@ -15,15 +20,11 @@ const Header = () => {
                 </Link>
                 <nav> 
                     <ul className={styles.navbar}>
-                        <li>
-                            <Link to="/">Home</Link>
-                        </li>
-                        <li>
-                            <Link to="/cards">Art cards</Link>
-                        </li>
-                        <li>
-                            <Link to="/">What else?</Link>
-                        </li>
+                        { pages.map((item, index) => (
+                            <li key={index} className={ activePage.toLowerCase() === item.name.toLowerCase() ? `${styles.activePage}` : ''}>
+                            <Link to={item.path}>{item.name}</Link>
+                            </li>
+                        ))}
                     </ul>
                 </nav>
             </div>
