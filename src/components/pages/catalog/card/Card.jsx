@@ -15,10 +15,8 @@ const Card = ({img, h, text}) => {
       </div>
       <div className={ styles.cardText }> 
         <h3>{h}</h3> 
-        <div>
-          <p>{text}</p> 
-          <a href="#">Look this art</a>
-        </div> 
+        <p>{text}</p> 
+        <a href="#">Look this art</a>
       </div> 
     </div> 
   ) 

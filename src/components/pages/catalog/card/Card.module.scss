@@ -51,16 +51,17 @@
             z-index: 10;
         }
 
-        > div {
+        p {
             position: absolute;
-            left: 0;
+            left: center;
             top: 65%;
 
             padding: 5% 5% 0 5%;
+            width: 90%;
 
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-end;
             align-items: center;
 
             transform: translateY(-1%);
@@ -73,46 +74,47 @@
             transition: all 0.2s ease-in-out;
 
             z-index: 2;
+        }
 
-            a {
-                margin-top: 5%;
-                padding: 4% 0 4% 0;
+        a {
+            position: absolute;
+            left: center;
+            top: 90%;
 
-                width: 50%;
-                
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                
-                color: rgb(236, 236, 236); 
-                font-size: 20px; 
-                font-weight: 500; 
-                text-decoration: none;
+            padding: 4% 0 4% 0;
+            width: 50%;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            color: rgb(236, 236, 236); 
+            font-size: 20px; 
+            font-weight: 500; 
+            text-decoration: none;
 
-                border-radius: 25px; 
-                border: 1px solid rgb(236, 236, 236);
+            border-radius: 25px; 
+            border: 1px solid rgb(236, 236, 236);
 
-                cursor: pointer; 
-                opacity: 0;
-                transition: all 0.5s ease-in-out; 
+            cursor: pointer; 
+            opacity: 0;
+            transition: all 0.5s ease-in-out; 
 
-                &:hover {
-                    background-color: rgb(230, 230, 230);
-                    color: black;
-                }
+            &:hover {
+                background-color: rgb(230, 230, 230);
+                color: black;
             }
         }
- 
     } 
 
-    &:hover .cardText div {
+    &:hover .cardText > p , a {
         transform: translateY(0px);
         visibility: visible;
         opacity: 1;
         transition: all 0.82s ease-in-out;
     }
 
-    &:hover .cardText div a {
+    &:hover .cardText a {
         opacity: 1;
     }
 
@@ -124,8 +126,8 @@
             height: 730px;
         }
 
-        .cardText {
-            > div {
+        .cardText { 
+            p {
                 top: 62%;
             }
         }
@@ -139,17 +141,17 @@
             height: 650px;
         }
 
-        .cardText {
-            > div {
+        .cardText {   
+            p {
                 top: 60%;
                 font-size: 18px;
-
-                a {
-                    font-size: 20px;
-                }
+            }
+            
+            a {
+                font-size: 20px;
             }
         }
-    }
+    }   
 
     @media screen and (max-width: 1050px) {
         width: 300px;
@@ -160,13 +162,13 @@
         }
 
         .cardText {
-            > div {
-                top: 60%;
+            p {
+                top: 58%;
                 font-size: 18px;
-
-                a {
-                    font-size: 20px;
-                }
+            }
+            
+            a {
+                font-size: 20px;
             }
         }
     }
@@ -195,13 +197,13 @@
         }
 
         .cardText {
-            > div {
-                top: 60%;
+            p {
+                top: 50%;
                 font-size: 18px;
-
-                a {
-                    font-size: 20px;
-                }
+            }
+            
+            a {
+                font-size: 20px;
             }
         }
     }

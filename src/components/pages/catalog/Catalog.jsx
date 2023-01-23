@@ -21,17 +21,17 @@ const Catalog = ({setActivePage}) => {
         <Card 
           img={imgCard1} 
           h={"Dark Forest"} 
-          text={"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum doloribus inventore eligendi in, ea, sapiente adipisci dolores earum soluta nam aperiam doloremque ratione, possimus labore ab quasi architecto fugiat necessitatibus. "}
+          text={"The dark forest is full of mysteries. This is the last adventure on the way to the answers to life's questions. Each hummock of this swamp is full of mysteries, because behind each of them is a mysterious past. "}
         />
         <Card 
           img={imgCard2} 
-          h={"Dark Forest"} 
-          text={"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum doloribus inventore eligendi in, ea, sapiente adipisci dolores earum soluta nam aperiam doloremque ratione, possimus labore ab quasi architecto fugiat necessitatibus. "}
+          h={"Last Lantern"} 
+          text={"This lantern gives hope even in the darkest forest. Everyone needs it, but not everyone deserves it. Everyone dies, but not everyone lives. How will you go about this journey? The last frnar will answer questions."}
         />
         <Card 
           img={imgCard3} 
-          h={"Dark Forest"} 
-          text={"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum doloribus inventore eligendi in, ea, sapiente adipisci dolores earum soluta nam aperiam doloremque ratione, possimus labore ab quasi architecto fugiat necessitatibus. "}
+          h={"Fireflies"} 
+          text={"Fireflies will light up even the darkest corner. It's hard not to get lost in this scary forest. Follow their lights and find your way out of this endless maze! Be true to yourself and find your way home!"}
         />
       </div>              
     </>
