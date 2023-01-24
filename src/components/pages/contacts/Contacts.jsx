@@ -28,7 +28,7 @@ const Contacts = ({setActivePage}) => {
          </text>
          <text className={ styles.about }>
             <h3>About</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur consequuntur laborum vero assumenda voluptate expedita eaque libero omnis atque officiis exercitationem beatae quisquam, tempora rem adipisci iusto neque sequi recusandae a ratione aspernatur? Reiciendis maiores culpa vero eum, iste, consectetur alias pariatur, consequuntur itaque est numquam?</p>
+            <p>We are a budding development team. We are engaged in self-development in the field of web technologies. We study modern advanced software and new solutions for future projects!</p>
          </text>
       </div>
    </div>              

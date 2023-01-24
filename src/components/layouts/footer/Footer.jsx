@@ -9,7 +9,7 @@ const Footer = () => {
     <footer>
       <div className={styles.container}>
         <div className={styles.copyright}>
-          <span>{"<"}</span>&copy; 2022-2023 <span>Zaambik</span> <span>{"/>"}</span>
+          <span>{"<"}</span>2022-2023<span>||</span> <span>&copy; Zaambik</span> <span>{">"}</span>
         </div>
         <div className={styles.links}>
           <a href="https://vk.com/zaambik" target="_blank"><img src={iconVk} width="55px"/></a>
