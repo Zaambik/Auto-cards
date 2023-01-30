@@ -1,0 +1,22 @@
+.container {
+   margin: auto;
+
+   max-width: 1440px;
+
+   display: grid;
+   grid-template-columns: 1fr 2fr ;
+
+   > img {
+      width: 100%;
+      border-radius: 55px;
+   }
+
+   > h3 {
+      font-size: 28px;
+   } 
+
+   > ul > li {
+      list-style-type: none;
+      font-size: 20px;
+   }
+}

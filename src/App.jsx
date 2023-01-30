@@ -6,6 +6,7 @@ import Footer from './components/layouts/footer/Footer'
 import Home from './components/pages/home/Home'
 import Catalog from './components/pages/catalog/Catalog'
 import Contacts from './components/pages/contacts/Contacts'
+import ProductPage from './components/pages/product-page/ProductPage'
 
 import './App.css'
 
@@ -25,6 +26,7 @@ function App() {
           <Route path="/" element={<Home setActivePage={(page) => setActivePage(page)}/>}/>
           <Route path="/catalog" element={<Catalog setActivePage={(page) => setActivePage(page)}/>}/>
           <Route path="/contacts" element={<Contacts setActivePage={(page) => setActivePage(page)}/>}/>
+          <Route path="/product" element={<ProductPage setActivePage={(page) => setActivePage(page)}/>}/>
           <Route path="*" element={<h1>page not found</h1>}/>
         </Routes>
 
