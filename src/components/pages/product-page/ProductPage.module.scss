@@ -1,22 +1,29 @@
 .container {
    margin: auto;
 
-   max-width: 1440px;
+   max-width: 1200px;
 
    display: grid;
-   grid-template-columns: 1fr 2fr ;
+   grid-template-rows: 1fr;
+   
 
    > img {
+      height: 400px;
       width: 100%;
-      border-radius: 55px;
+
+      object-fit: cover;
    }
 
    > h3 {
       font-size: 28px;
+      text-align: center;
    } 
 
-   > ul > li {
+   > ul {
+      padding: 0;
+      margin: 0;
       list-style-type: none;
       font-size: 20px;
+      text-align: center;
    }
-}
+}   

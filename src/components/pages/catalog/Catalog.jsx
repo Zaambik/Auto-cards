@@ -2,9 +2,18 @@ import { useEffect } from 'react';
 
 import Card from './card/Card';
 
-import imgCard1 from './img/card1.png';
-import imgCard2 from './img/card2.png';
-import imgCard3 from './img/card3.png';
+
+import imgB1 from './img/B1.png';
+import imgB2 from './img/B2.png';
+import imgB3 from './img/B3.png';
+import imgB4 from './img/B4.png';
+import imgB5 from './img/B5.png';
+import imgB6 from './img/B6.png';
+import imgB7 from './img/B7.png';
+import imgB8 from './img/B8.png';
+import imgB9 from './img/B9.png';
+
+
 import styles from './Catalog.module.scss';
 
 const Catalog = ({ setActivePage }) => {
@@ -14,88 +23,88 @@ const Catalog = ({ setActivePage }) => {
 
    return (
       <>
-         <h2>Cards Collection</h2>
+         <h2>BMW models</h2>
          <div className={styles.container}>
             <Card
                id={'1'}
-               img={imgCard1}
-               h={'Dark Forest'}
+               img={imgB1}
+               h={'BMW X6'}
                text={
-                  "The dark forest is full of mysteries. This is the last adventure on the way to the answers to life's questions. Each hummock of this swamp is full of mysteries, because behind each of them is a mysterious past. "
+                  "BMW X6 отличается уникальным внешним видом и спортивной динамичностью благодаря мощному двигателю, точно настроенной подвеске и широкой комплектации, в которую входит в том числе и пакет xOffroad."
                }
-               price={'+100500'}
+               price={'8 400 000 '}
             />
             <Card
                id={'2'}
-               img={imgCard2}
-               h={'Last Lantern'}
+               img={imgB2}
+               h={'BMW XM'}
                text={
-                  'This lantern gives hope even in the darkest forest. Everyone needs it, but not everyone deserves it. Everyone dies, but not everyone lives. How will you go about this journey? The last frnar will answer questions.'
+                  'Эксклюзивный, экспрессивный, электрифицированный: новый BMW XM сочетает в себе экспрессивный дизайн с высокой динамикой BMW M и мощной технологией подключаемого гибрида последнего поколения.'
                }
-               price={'+100500'}
+               price={'31 000 000 '}
             />
             <Card
                id={'3'}
-               img={imgCard3}
-               h={'Fireflies'}
+               img={imgB3}
+               h={'BMW X5'}
                text={
-                  "Fireflies will light up even the darkest corner. It's hard not to get lost in this scary forest. Follow their lights and find your way out of this endless maze! Be true to yourself and find your way home!"
+                  "Оснащенный новыми технологиями, обеспечивающими больше безопасности и максимум динамики на любых покрытиях, BMW X5 является безусловным лидером."
                }
-               price={'+100500'}
+               price={'7 190 000  '}
             />
             <Card
                id={'4'}
-               img={imgCard1}
-               h={'Dark Forest'}
+               img={imgB4}
+               h={'BMW X4'}
                text={
-                  "The dark forest is full of mysteries. This is the last adventure on the way to the answers to life's questions. Each hummock of this swamp is full of mysteries, because behind each of them is a mysterious past. "
+                  "Новый BMW X4 это настоящий покоритель дорог. Это Sports Activity Coupe (SAC), оснащенный двигателями BMW TwinPower Turbo и имеющий более широкую колесную базу для превосходной управляемости, а также множество усовершенствованных элементов дизайна экстерьера и интерьера."
                }
-               price={'+100500'}
+               price={'5 700 000 '}
             />
             <Card
                id={'5'}
-               img={imgCard2}
-               h={'Last Lantern'}
+               img={imgB5}
+               h={'BMW iX'}
                text={
-                  'This lantern gives hope even in the darkest forest. Everyone needs it, but not everyone deserves it. Everyone dies, but not everyone lives. How will you go about this journey? The last frnar will answer questions.'
+                  'BMW iX M60: Электрическая динамика движения высочайшего уровня. Cочетает в себе инновационную мощь BMW i и BMW M. Узнайте больше об этом первом полностью электрическом автомобиле BMW M в сегменте мощных SAV.'
                }
-               price={'+100500'}
+               price={'9 580 000 '}
             />
             <Card
                id={'6'}
-               img={imgCard3}
-               h={'Fireflies'}
+               img={imgB6}
+               h={'BMW 8 Cabrio'}
                text={
-                  "Fireflies will light up even the darkest corner. It's hard not to get lost in this scary forest. Follow their lights and find your way out of this endless maze! Be true to yourself and find your way home!"
+                  "Обновленный BMW 8 серии Cabrio – это роскошный автомобиль, который позволяет Вам наслаждаться чувством эксклюзивной свободы на каждом километре пути. Испытайте сами!"
                }
-               price={'+100500'}
+               price={'5 000 000 '}
             />
             <Card
                id={'7'}
-               img={imgCard1}
-               h={'Dark Forest'}
+               img={imgB7}
+               h={'BMW 7 серии'}
                text={
-                  "The dark forest is full of mysteries. This is the last adventure on the way to the answers to life's questions. Each hummock of this swamp is full of mysteries, because behind each of them is a mysterious past. "
+                  "Потрясающая элегантность и разнообразные информационно-развлекательные возможности сочетаются в новом BMW 7 серии, обеспечивая премиальные впечатления от поездки!"
                }
-               price={'+100500'}
+               price={'11 090 000 '}
             />
             <Card
                id={'8'}
-               img={imgCard2}
-               h={'Last Lantern'}
+               img={imgB8}
+               h={'BMW 4 серии Coupe'}
                text={
-                  'This lantern gives hope even in the darkest forest. Everyone needs it, but not everyone deserves it. Everyone dies, but not everyone lives. How will you go about this journey? The last frnar will answer questions.'
+                  'Бескомпромиссный и неповторимый: новый BMW 4 серии Coupe решительно и элегантно разрушает стереотипы. Его независимый дизайн и классический купеобразный силуэт напоминают о легендарных моделях прошлого, и в то же время подчеркивают прогрессивный характер автомобиля.'
                }
-               price={'+100500'}
+               price={'4 450 000 '}
             />
             <Card
                id={'9'}
-               img={imgCard3}
-               h={'Fireflies'}
+               img={imgB9}
+               h={'BMW Z4'}
                text={
-                  "Fireflies will light up even the darkest corner. It's hard not to get lost in this scary forest. Follow their lights and find your way out of this endless maze! Be true to yourself and find your way home!"
+                  "BMW Z4 сочетает в себе динамику спорткара с ощущением свободы, которое дарит родстер. Испытайте сами: Современная эстетика культового дизайна родстера. Впечатляющая динамика благодаря мощности до 387 л.с. и безупречная управляемость. Аэродинамический пакет M для большей эффективности и динамики!"
                }
-               price={'+100500'}
+               price={'5 110 000 '}
             />
          </div>
       </>

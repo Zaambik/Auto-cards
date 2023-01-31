@@ -3,11 +3,16 @@
     margin: auto;
     padding: 5% 0 5% 0;
 
-    max-width: 1440px;
+    max-width: 1200px;
 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 15px;
+    
+
+    @media screen and (max-width: 1100px) {
+        grid-template-columns: 1fr 1fr;
+    }
 
     @media screen and (max-width: 950px) {
         display: flex;

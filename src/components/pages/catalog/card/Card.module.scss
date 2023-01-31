@@ -8,24 +8,85 @@
     flex-direction: column; 
     align-items: center; 
     justify-content: space-between;
+    gap: 10px;
      
-    
-    color: rgb(204, 204, 204); 
+    color: rgb(255, 255, 255); 
     background-color: rgb(70, 70, 70); 
     border-radius: 35px; 
 
     overflow: hidden;
-    border: none;
-    
+    border: 20px;
+    border-color: black;
+
     transition: all 0.5s ease-in-out;
 
+    &:hover {
+        border: 10px;
+        color: rgb(86, 184, 253);
+        scale: 100px;
+        transform: scale(1.03); 
+        border-radius: 50px;
+        box-shadow: 0px 0px 7px 1px rgb(86, 184, 253);
+        transition: all 0.5s ease-in-out;
+
+        > h4 {
+            color: rgb(255, 255, 255);
+            transition: all 1s ease-in-out;
+        }
+    }
+    
+
     img {
+        height: 300px;
         width: 100%;
         object-fit: cover;
+        object-position: center;
+        border-radius: 20px;
+
     }
 
     h3 {
         font-size: 24px;
     }
 
+    h4 {
+        font-size: 20px;
+        color: rgb(214, 214, 214);
+        transition: all 1s ease-in-out;
+        
+    }
+
+    
+    p {
+        padding: 2% 5% 2% 5%;
+        font-size: 20px;
+        color: rgb(228, 228, 228);
+    }
+
+        a {
+            padding: 0.7em 0.7em;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 10px;
+
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            border: 1px solid rgb(255, 255, 255);
+
+            transition: all 0.5s ease-in-out;
+
+            &:hover {
+                background-color: rgb(255, 255, 255); 
+                color: black;
+                box-shadow: 0px 0px 10px 0.5px black;
+                transition: all 0.5s ease-in-out;
+            }
+
+            &:focus {
+                outline: 2px solid rgb(0, 0, 0);
+            }
+        }
 }

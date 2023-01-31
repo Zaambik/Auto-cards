@@ -1,36 +1,48 @@
 .container {
     margin: 7% auto;
 
-    max-width: 1440px;
+    max-width: 1200px;
 
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 40px;
 
     .imgWrapper {
 
-        width: 600px;
-        height: 600px;
+        margin: auto;
+
+        width: 500px;
+        height: 500px;
         
         border-radius: 50%;
-        box-shadow: 0 0 10px rgb(10, 132, 207);
+        box-shadow: 0 0 20px rgb(0, 0, 0);
 
         overflow: hidden;
 
         .image {
-            width: 100%;
-    
-            box-shadow: 0 0 10px rgb(10, 132, 207);
+            height: 100%;
 
-            transition: 3s linear;
+            box-shadow: 0 0 10px rgb(0, 0, 0);
+
+            transition: 3s ease-in-out;
         
             &:hover {
-                transition: 3s linear;
-                transform: scale(1.1);
+                transition: 2s ease-in-out;
+                transform: scale(1.097);
             }
         } 
+
+        @media screen and (max-width: 1200px) {
+            width: 400px;
+            height: 400px;
+        }
+
+        @media screen and (max-width: 1050px) {
+            width: 350px;
+            height: 350px;
+        }
 
     }
 
@@ -60,6 +72,7 @@
             align-items: center;
 
             border-radius: 20px;
+            border: 1px solid rgb(54, 54, 54);
 
             background-color:  rgb(54, 54, 54);
 
