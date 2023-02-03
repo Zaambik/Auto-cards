@@ -13,7 +13,7 @@ const Home = ({setActivePage}) => {
 
   return (
     <div className={styles.container}>
-      <div className={ styles.imgWrapper}>
+      <div className={styles.imgWrapper}>
         <Link to="/catalog"><img className={styles.image} src={imgMain} alt="Zaambik" /></Link>
       </div>
       <h2>Let's explore future!</h2>

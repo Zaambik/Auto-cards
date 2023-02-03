@@ -17,7 +17,7 @@ const ProductPage = ({setActivePage}) => {
 
    return (
       <>
-         <h2>BMW X6</h2>
+         <h2>{id}BMW X6</h2>
          <div className={styles.container}>
             <img src={imgCard}></img>
             <h3>Об автомобиле</h3>
