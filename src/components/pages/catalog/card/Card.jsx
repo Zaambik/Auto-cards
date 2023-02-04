@@ -6,10 +6,10 @@ import styles from './Card.module.scss'
 const Card = ({ id, img, h, text, price }) => {
   return (
    <div className={styles.card}>
-   <img src={img} />
+    <Link to={`/catalog/${id}`}><img src={img} /></Link>
    <h3>{h}</h3>
       <h4>{price}₽</h4>
-      <Link to={`/catalog/${id}`}>Подробнее</Link>
+      <Link className={styles.button} to={`/catalog/${id}`}>Подробнее</Link>
    </div>
   );
 };

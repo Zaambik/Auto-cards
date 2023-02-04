@@ -22,6 +22,9 @@
 
     border: 1.5px solid rgb(0, 0, 0);
 
+    cursor: pointer;
+
+
     &:hover {
         border: 10px;
         color: rgb(86, 184, 253);
@@ -67,7 +70,7 @@
         color: rgb(228, 228, 228);
     }
 
-        a {
+        .button {
             padding: 0.7em 0.7em;
 
             display: flex;

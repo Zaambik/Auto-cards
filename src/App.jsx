@@ -17,7 +17,7 @@ function App() {
       <div className="App">
         <Header activePage={activePage} />
 
-         <div className="main">
+         <main>
             <Routes>
                <Route path="/" element={<Home setActivePage={(page) => setActivePage(page)} />} />
                <Route
@@ -34,7 +34,7 @@ function App() {
                />
                <Route path="*" element={<>page not found</>} />
             </Routes>
-         </div>
+         </main>
 
          <Footer />
       </div>
