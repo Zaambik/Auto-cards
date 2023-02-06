@@ -1,7 +1,7 @@
 import { FC, useEffect, useState, useRef } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from '../../../../../college-cursach/src/hooks/useRedux';
-import { fetchProducts, getProducts, productsStatus, updateStatus } from '../../../../../college-cursach/src/redux/slice/productsSlice';
+import { useAppDispatch, useAppSelector } from '../../../hooks/useRedux';
+import { fetchProducts, getProducts, productsStatus, updateStatus } from '../../../redux/slice/productsSlice';
 
 import Card from './card/Card';
 
