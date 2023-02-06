@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 import styles from './Home.module.scss'
-import imgMain from './img/L3.jpeg'
+import imgL3 from './img/L3.png'
 
 
 const Home = ({setActivePage}) => {
@@ -14,14 +14,14 @@ const Home = ({setActivePage}) => {
   return (
     <div className={styles.container}>
       <div className={styles.imgWrapper}>
-        <Link to="/catalog"><img className={styles.image} src={imgMain} alt="Zaambik" /></Link>
+        <Link to="/catalog"><img className={styles.image} src={imgL3} alt="main image" /></Link>
       </div>
-      <h2>Let's explore future!</h2>
+      <h2>Загляни в будущее!</h2>
       <div className={styles.text}>
           <p>
-          Our site is a large collection of modern models of BMW cars. <br/> Check them out in card format and explore the entire collection!
+          Наш сайт представляет собой большую коллекцию современных моделей премиальных автомобилей. <br/> Ознакомьтесь с ними в нашем каталоге и изучите всю коллекцию!
           </p>
-          <Link to='/catalog'>Explore</Link>
+          <Link to='/catalog'>Ознакомиться</Link>
       </div>
     </div>
   )

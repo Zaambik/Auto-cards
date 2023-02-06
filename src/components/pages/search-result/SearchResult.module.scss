@@ -1,0 +1,11 @@
+.container {
+   margin: auto;
+   padding: 5% 2% 5% 2%;
+
+   max-width: 1200px;     
+   
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   align-items: start;
+   grid-gap: 15px;
+}

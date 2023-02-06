@@ -11,8 +11,8 @@ const pages = [
 ];
 
 const Header = ({ activePage }) => {
-   const searchRef = useRef(null);
    const navigate = useNavigate()
+   const searchRef = useRef(null);
    const [localSearch, setLocalSearch] = useState('');
 
    const onSearchInput = (event) => {
@@ -22,10 +22,15 @@ const Header = ({ activePage }) => {
    };
 
    const clickOnSearch = () => {
-      //fetch => ----------------------- -- --  -- -- -- - - - - --- - -- - --------------------
-      console.log(searchRef?.current?.value);
-      navigate("fetchResponse")
+      navigate(searchRef?.current?.value === '' ? '/catalog' : `/search-result?search=${searchRef?.current?.value}`)
    }
+
+   const enterClick = (event) => {
+      if (event.key === 'Enter') {
+         event.preventDefault();
+         navigate(searchRef?.current?.value === '' ? '/catalog' : `/search-result?search=${searchRef?.current?.value}`);
+      }
+   };
 
    return (
       <header>
@@ -56,12 +61,13 @@ const Header = ({ activePage }) => {
                )} */}
                <input
                   className={styles.searchInput}
+                  placeholder="Поиск модели"
                   type="search"
-                  placeholder="Search"
-                  aria-label="Search"
+                  aria-label="Поиск модели"
                   onChange={onSearchInput}
                   value={localSearch}
                   ref={searchRef}
+                  onKeyDown={enterClick}
                />
                <button className={styles.button} type="button" onClick={clickOnSearch}>
                   Search

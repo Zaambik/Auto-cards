@@ -5,22 +5,6 @@
 
    display: grid;
    grid-template-rows: 1fr;
-   
-
-   > img {
-      margin-top: 70px;
-      height: 400px;
-      width: 100%;
-      border-radius: 25px;
-
-      object-fit: cover;
-
-      transition: all 2s ease-in-out;
-
-      overflow: hidden;
-      
-      border: 4px dashed rgb(40, 40, 40);
-   }
 
    > h3 {
 

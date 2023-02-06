@@ -1,42 +1,65 @@
-import { useEffect } from 'react';
+import { FC, useEffect, useState, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+import qs from 'qs';
 
 import Card from './card/Card';
 
+import { fetchProducts, getProducts, productsStatus, updateStatus } from '../../../redux/slice/productsSlice';
+import { useAppDispatch, useAppSelector } from '../../../hooks/useRedux';
 
 import imgB1 from './img/B1.png';
 import imgB2 from './img/B2.png';
 import imgB3 from './img/B3.png';
 import imgB4 from './img/B4.png';
-import imgB5 from './img/B5.png';
-import imgB6 from './img/B6.png';
-import imgB7 from './img/B7.png';
+import imgF3 from './img/F3.png';
+import imgF2 from './img/F2.png';
+import imgF1 from './img/F1.png';
 import imgB8 from './img/B8.png';
 import imgB9 from './img/B9.png';
 
 import imgM1 from './img/M1.png';
+import imgM2 from './img/M2.png';
+import imgM3 from './img/M3.png';
 
 
 
 import styles from './Catalog.module.scss';
 
 const Catalog = ({ setActivePage }) => {
+   const products = useAppSelector(getProducts);
+   const statusProducts = useAppSelector(productsStatus);
+   const dispatch = useAppDispatch();
+
+   const navigate = useNavigate();
+
    useEffect(() => {
+      const fetchData = () => {
+         dispatch(fetchProducts());
+      };
+      fetchData();
       setActivePage('catalog');
-   }, []);
+      window.scrollTo(0, 0);
+   },[])
+
+   if (statusProducts === 'error') {
+      alert('something went wrong, please try again later');
+      navigate('/');
+      dispatch(updateStatus('loading'));
+   }
+
+   if (statusProducts === 'loading') {
+      return <h2>...loading</h2>;
+   }
 
    return (
       <>
-         <h2>BMW models</h2>
-         <div className={styles.container}>
-            <Card
-               id={'1'}
-               img={imgB1}
-               h={'BMW X6'}
-               text={
-                  "BMW X6 отличается уникальным внешним видом и спортивной динамичностью благодаря мощному двигателю, точно настроенной подвеске и широкой комплектации, в которую входит в том числе и пакет xOffroad."
-               }
-               price={'8 400 000 '}
-            />
+         <h2>Каталог автомобилей</h2>
+         <section className={styles.cards}>
+            {products.map((item, index) => (
+               <Card key={index} id={item._id} img={imgF1} h={item.title} text={item.info} price={String(item.price)} />
+            ))}
+         </section>
+         {/* <div className={styles.container}>
             <Card
                id={'2'}
                img={imgB2}
@@ -49,7 +72,7 @@ const Catalog = ({ setActivePage }) => {
             <Card
                id={'3'}
                img={imgB3}
-               h={'BMW X5'}
+               h={'BMW X5 M F95'}
                text={
                   "Оснащенный новыми технологиями, обеспечивающими больше безопасности и максимум динамики на любых покрытиях, BMW X5 является безусловным лидером."
                }
@@ -66,35 +89,35 @@ const Catalog = ({ setActivePage }) => {
             />
             <Card
                id={'5'}
-               img={imgB5}
-               h={'BMW iX'}
+               img={imgF3}
+               h={'Ferrari F8 Tributo'}
                text={
                   'BMW iX M60: Электрическая динамика движения высочайшего уровня. Cочетает в себе инновационную мощь BMW i и BMW M. Узнайте больше об этом первом полностью электрическом автомобиле BMW M в сегменте мощных SAV.'
                }
-               price={'9 580 000 '}
+               price={'18 630 000 '}
             />
             <Card
                id={'6'}
-               img={imgB6}
-               h={'BMW 8 Cabrio'}
+               img={imgF2}
+               h={'Ferrari Roma'}
                text={
                   "Обновленный BMW 8 серии Cabrio – это роскошный автомобиль, который позволяет Вам наслаждаться чувством эксклюзивной свободы на каждом километре пути. Испытайте сами!"
                }
-               price={'5 000 000 '}
+               price={'17 200 000 '}
             />
             <Card
                id={'7'}
-               img={imgB7}
-               h={'BMW 7 серии'}
+               img={imgF1}
+               h={'Ferrari 296 GTB'}
                text={
                   "Потрясающая элегантность и разнообразные информационно-развлекательные возможности сочетаются в новом BMW 7 серии, обеспечивая премиальные впечатления от поездки!"
                }
-               price={'11 090 000 '}
+               price={'23 690 000 '}
             />
             <Card
                id={'8'}
-               img={imgB8}
-               h={'BMW 4 серии Coupe'}
+               img={imgM3}
+               h={'Mercedes AMG H247'}
                text={
                   'Бескомпромиссный и неповторимый: новый BMW 4 серии Coupe решительно и элегантно разрушает стереотипы. Его независимый дизайн и классический купеобразный силуэт напоминают о легендарных моделях прошлого, и в то же время подчеркивают прогрессивный характер автомобиля.'
                }
@@ -102,8 +125,8 @@ const Catalog = ({ setActivePage }) => {
             />
             <Card
                id={'9'}
-               img={imgB9}
-               h={'BMW Z4'}
+               img={imgM2}
+               h={'Mercedes AMG W177'}
                text={
                   "BMW Z4 сочетает в себе динамику спорткара с ощущением свободы, которое дарит родстер. Испытайте сами: Современная эстетика культового дизайна родстера. Впечатляющая динамика благодаря мощности до 387 л.с. и безупречная управляемость. Аэродинамический пакет M для большей эффективности и динамики!"
                }
@@ -112,13 +135,13 @@ const Catalog = ({ setActivePage }) => {
             <Card
                id={'10'}
                img={imgM1}
-               h={'Mercedes-Benz A-Класс'}
+               h={'Mercedes A-Класс'}
                text={
                   "Ссылка на сайт, откуда можно брать картинки: https://quto.ru/mercedes-benz/a-class/w177f/hatchback5d"
                }
                price={'3 220 000 '}
             />
-         </div>
+         </div> */}
       </>
    );
 };
