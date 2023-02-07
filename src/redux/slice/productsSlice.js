@@ -4,10 +4,10 @@ import axios from 'axios';
 export const fetchProducts = createAsyncThunk('products/fetchProducts', async (params) => {
    const queryParams = params ? '?' : '';
    if (params?.searchValue) {
-      const { data } = await axios.get(`http://localhost:4200/api/catalog${queryParams}searchTerm=${params.searchValue}`);
+      const { data } = await axios.get(`http://localhost:8080/api/catalog${queryParams}searchTerm=${params.searchValue}`);
       return data;
    } else {
-      const { data } = await axios.get(`http://localhost:4200/api/catalog`);
+      const { data } = await axios.get(`http://localhost:8080/api/catalog`);
       return data;
    }
 });

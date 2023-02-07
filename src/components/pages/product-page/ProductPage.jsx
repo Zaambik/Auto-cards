@@ -39,18 +39,18 @@ const ProductPage = ({setActivePage}) => {
 
    return (
       <>
-         <h2>{product.title}</h2>
+         <h2>{product.model}</h2>
          <div className={styles.container}>
             <Slider img={imgCard}/>
             <h3>Об автомобиле</h3>
             <ul>
                <li> Общие характеристики автомобиля: <br/> 
-                  <br/> Двигатель: 3.0 л / 340 л.с. / Бензиновый
-                  <br/>Коробка: Автоматическая
-                  <br/>Привод: Полный
-                  <br/>Расход топлива: 10,9 л в городе / 7,9 л за городом
-                  <br/>Разгон до 100 км/ч: 5,5 с
-                  <br/>Транспортный налог: 102 000 рублей в год</li>
+                  <br/> Двигатель: {product.power} / { product.engine } 
+                  <br/>Привод: {product.privod}
+                  <br/>Разгон до 100 км/ч: {product.speed}
+                  <br/>Транспортный налог: {product.nalog} 
+                  <br/>Год выпуска: {product.year}
+                  </li>
             </ul>
          </div>
       </>

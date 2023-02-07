@@ -54,9 +54,9 @@ const Catalog = ({ setActivePage }) => {
    return (
       <>
          <h2>Каталог автомобилей</h2>
-         <section className={styles.cards}>
+         <section className={styles.container}>
             {products.map((item, index) => (
-               <Card key={index} id={item._id} img={imgF1} h={item.title} text={item.info} price={String(item.price)} />
+               <Card key={index} id={item._id} img={imgF1} h={item.model} text={item.info} price={String(item.price)} />
             ))}
          </section>
          {/* <div className={styles.container}>

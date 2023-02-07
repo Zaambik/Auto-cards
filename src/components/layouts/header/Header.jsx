@@ -5,9 +5,9 @@ import styles from './Header.module.scss';
 import imgLogo from '../../../assets/img/logo.png';
 
 const pages = [
-   { name: 'Home', path: '/' },
-   { name: 'Catalog', path: '/catalog' },
-   { name: 'Contacts', path: '/contacts' },
+   { name: 'Home', path: '/', value: 'Главная' },
+   { name: 'Catalog', path: '/catalog', value: 'Каталог' },
+   { name: 'Contacts', path: '/contacts', value: 'Контакты' },
 ];
 
 const Header = ({ activePage }) => {
@@ -70,7 +70,7 @@ const Header = ({ activePage }) => {
                   onKeyDown={enterClick}
                />
                <button className={styles.button} type="button" onClick={clickOnSearch}>
-                  Search
+                  Поиск
                </button>
             </form>
          </div>

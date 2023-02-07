@@ -35,7 +35,7 @@ function App() {
                      element={<ProductPage setActivePage={(page) => setActivePage(page)} />}
                   />
                   <Route path="/search-result" element={<SearchResult setActivePage={(page) => setActivePage(page)} />} />
-                  <Route path="*" element={<>page not found</>} />
+                  <Route path="*" element={<> 👾404 Page not found👾 </>}/>
                </Routes>
             </main>
             <Footer />
