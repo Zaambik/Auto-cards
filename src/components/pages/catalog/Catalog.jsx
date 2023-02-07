@@ -7,21 +7,6 @@ import Card from './card/Card';
 import { fetchProducts, getProducts, productsStatus, updateStatus } from '../../../redux/slice/productsSlice';
 import { useAppDispatch, useAppSelector } from '../../../hooks/useRedux';
 
-import imgB1 from './img/B1.png';
-import imgB2 from './img/B2.png';
-import imgB3 from './img/B3.png';
-import imgB4 from './img/B4.png';
-import imgF3 from './img/F3.png';
-import imgF2 from './img/F2.png';
-import imgF1 from './img/F1.png';
-import imgB8 from './img/B8.png';
-import imgB9 from './img/B9.png';
-
-import imgM1 from './img/M1.png';
-import imgM2 from './img/M2.png';
-import imgM3 from './img/M3.png';
-
-
 
 import styles from './Catalog.module.scss';
 
@@ -56,7 +41,7 @@ const Catalog = ({ setActivePage }) => {
          <h2>Каталог автомобилей</h2>
          <section className={styles.container}>
             {products.map((item, index) => (
-               <Card key={index} id={item._id} img={imgF1} h={item.model} text={item.info} price={String(item.price)} />
+               <Card key={index} id={item._id} img={item.image} h={item.model} text={item.info} price={String(item.price)} />
             ))}
          </section>
          {/* <div className={styles.container}>
