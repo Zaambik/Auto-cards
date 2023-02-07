@@ -49,7 +49,7 @@ const Header = ({ activePage }) => {
                                  ? `${styles.activePage}`
                                  : ''
                            }>
-                           <Link to={item.path}>{item.name}</Link>
+                           <Link to={item.path}>{item.value}</Link>
                         </li>
                      ))}
                   </ul>

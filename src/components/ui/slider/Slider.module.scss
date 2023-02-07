@@ -1,5 +1,9 @@
 .wrapper {
    height: 400px;
+   border-radius: 25px;
+
+   border: 1.5px solid rgba(0, 0, 0, 1);
+
 
    span {
       width: 10px;
@@ -16,6 +20,7 @@
       transition: all 2s ease-in-out;
 
       overflow: hidden;
+
 
       img {
          width: 100%;

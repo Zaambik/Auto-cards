@@ -1,105 +1,99 @@
 .card { 
-    height: 100%;
+    position: relative;
+
+    margin: 15px 0 15px 0;
+    padding: 0 0 25px 0;
+
     display: flex; 
     flex-direction: column; 
     align-items: center; 
     justify-content: space-between;
     gap: 10px;
      
-    color: rgb(204, 204, 204); 
+    color: rgb(255, 255, 255); 
     background-color: rgb(70, 70, 70); 
-    border: none;
-    
+    border-radius: 35px; 
+
     overflow: hidden;
+    border: 20px;
+    border-color: black;
+
     transition: all 0.5s ease-in-out;
 
-    .cardUp {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    border: 1.5px solid rgb(0, 0, 0);
 
-        a {
-            width: 100%;
-            
-            img {
-                height: 250px;
-                width: 100%;
-                object-fit: cover;
-                object-position: center;
-            }
-        }
+    cursor: pointer;
 
-        h3 {
-            font-size: 24px;
+
+    &:hover {
+        border: 10px;
+        color: rgb(86, 184, 253);
+        scale: 100px;
+        transform: scale(1.03); 
+        border-radius: 50px;
+        box-shadow: 0px 0px 2px 1px rgb(0, 0, 0);
+        transition: all 0.5s ease-in-out;
+
+        background-color: rgb(25, 25, 25);
+            border: 1px solid black;
+
+        > h4 {
+            color: rgb(255, 255, 255);
+            transition: all 1s ease-in-out;
         }
     }
 
+    img {
+        height: 300px;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 20px;
+
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    h4 {
+        font-size: 20px;
+        color: rgb(214, 214, 214);
+        transition: all 1s ease-in-out;
+        
+    }
+
+    
     p {
         padding: 2% 5% 2% 5%;
         font-size: 20px;
-        text-align: center;
+        color: rgb(228, 228, 228);
     }
 
-    .price { 
-        padding-bottom: 3%;
-        width: 90%;
-
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        font-size: 18px;
-
-        a {
+        .button {
             padding: 0.7em 0.7em;
 
             display: flex;
             justify-content: center;
             align-items: center;
 
-            color: white;
-            text-decoration: none;
-            border: 1px solid rgb(204, 204, 204);
+            border-radius: 15px;
 
-            transition: all 0.2s ease-in-out;
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            border: 1px solid rgb(255, 255, 255);
+
+            transition: all 0.5s ease-in-out;
 
             &:hover {
-                background-color: rgb(204, 204, 204); 
+                background-color: rgb(255, 255, 255); 
                 color: black;
-                box-shadow: 0px 0px 12px 1px black;
+                box-shadow: 0px 0px 10px 0.5px black;
                 transition: all 0.5s ease-in-out;
             }
 
             &:focus {
-                outline: 3px solid rgb(108, 95, 255);
+                outline: 2px solid rgb(0, 0, 0);
             }
         }
-    }
-
-    @media screen and (max-width: 1100px) {
-        img {
-            height: 200px;
-        }
-
-        h3 {
-            font-size: 20px;
-        }
-
-        p {
-            padding: 2% 5% 2% 5%;
-            font-size: 16px;
-            text-align: center;
-        }
-
-        .price {
-            font-size: 16px;
-        }
-    }
-
-    @media screen and (max-width: 950px) {
-        img {
-            height: 180px;
-        }
-    }
 }

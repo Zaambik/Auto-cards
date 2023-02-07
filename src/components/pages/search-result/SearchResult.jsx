@@ -45,11 +45,11 @@ const SearchResult = ({ setActivePage }) => {
    return (
       <>
          <h2>
-            результат по запросу {'<'} {search} {'/>'}
+            Pезультат по запросу {'<'} {search} {'/>'}
          </h2>
          <div className={styles.container}>
             {products.map((item, index) => (
-               <Card key={index} id={item._id} img={imgCard1} h={item.title} text={item.info} price={String(item.price)} />
+               <Card key={index} id={item._id} img={item.image} h={item.model} text={item.info} price={String(item.price)} />
             ))}
          </div>
       </>

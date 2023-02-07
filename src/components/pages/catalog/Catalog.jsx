@@ -1,6 +1,5 @@
-import { FC, useEffect, useState, useRef } from 'react';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import qs from 'qs';
 
 import Card from './card/Card';
 
@@ -33,7 +32,7 @@ const Catalog = ({ setActivePage }) => {
    }
 
    if (statusProducts === 'loading') {
-      return <h2>...loading</h2>;
+      return <h2>Loading...</h2>;
    }
 
    return (

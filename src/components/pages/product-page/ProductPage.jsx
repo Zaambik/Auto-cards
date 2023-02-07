@@ -34,14 +34,14 @@ const ProductPage = ({setActivePage}) => {
    }
 
    if (product === null) {
-      return <h2>...loading</h2>;
+      return <h2>Loading...</h2>;
    }
 
    return (
       <>
          <h2>{product.model}</h2>
          <div className={styles.container}>
-            <Slider img={imgCard}/>
+            <Slider img={product.image}/>
             <h3>Об автомобиле</h3>
             <ul>
                <li> Общие характеристики автомобиля: <br/> 
