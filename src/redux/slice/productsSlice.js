@@ -3,13 +3,19 @@ import axios from 'axios';
 
 export const fetchProducts = createAsyncThunk('products/fetchProducts', async (params) => {
    const queryParams = params ? '?' : '';
-   if (params?.searchValue) {
-      const { data } = await axios.get(`http://localhost:8080/api/catalog${queryParams}searchTerm=${params.searchValue}`);
-      return data;
-   } else {
-      const { data } = await axios.get(`http://localhost:8080/api/catalog`);
+   if (params.searchValue) {
+      const { data } = await axios.get(`http://localhost:4200/api/catalog${queryParams}searchTerm=${params.searchValue}`);
       return data;
    }
+   const priceFilter = `priceFilter=${params.priceMin},${params.priceMax}&`
+   // if (params.priceMin !== 0 || params.priceMax !== 100000000) {
+   //    priceFilter = `priceFilter=${params.priceMin},${params.priceMax}&`
+   // }
+   const typeFilter = params?.typeFilter?.length !== 0 && params?.typeFilter?.length !== undefined ? `typeFilter=${params?.typeFilter}&` : '';
+   const producerFilter = params?.producerFilter?.length !== 0 && params?.producerFilter?.length !== undefined ? `modelFilter=${params?.producerFilter}&` : '';
+   const colorFilter = params?.colorFilter?.length !== 0 && params?.colorFilter?.length !== undefined ? `colorsFilter=${params?.colorFilter}&` : '';
+   const { data } = await axios.get(`http://localhost:8080/api/catalog${queryParams}${typeFilter}${producerFilter}${colorFilter}${priceFilter}`);
+   return data;
 });
 
 const initialState = {
