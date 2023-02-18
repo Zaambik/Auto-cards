@@ -1,6 +1,7 @@
 .container {
    margin: auto;
-   padding: 5% 2% 5% 2%;
+   margin-top: 60px;
+   padding: 0% 1% 5% 1%;
 
    max-width: 1200px;     
    
@@ -37,13 +38,14 @@
             border-right: none;
             border-left: none;
 
+
             > label {
                position: relative;
                font-size: 16px;
                cursor: pointer;
 
                > legend {
-                  font-size: 18px;
+                  font-size: 18x;
                }
 
                > .priceInput {
@@ -66,15 +68,18 @@
 
             text-transform: uppercase;
 
-            border: 3px solid #007aff;
+            border: 2px solid #272727;
+            border-radius: 15px;
             background: inherit;
             cursor: pointer;
-            transition: all 0.3s ease-in-out;
+            transition: all 0.4s ease-in-out;
 
             &:hover {
-               background: #007aff;
-               transition: all 0.3s ease-in-out;
-               color: white;
+               transition: all 0.4s ease-in-out;
+
+               border: 2px solid #272727;
+               color: rgb(255, 255, 255);
+               background: #272727;
 
                svg {
                   transition: transform 0.7s ease-in-out;
@@ -87,6 +92,7 @@
 
    .modelsNotFound {
       width: 100%;
+
       display: flex;
       justify-content: center;
 

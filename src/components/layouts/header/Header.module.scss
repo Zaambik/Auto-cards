@@ -30,7 +30,7 @@ header {
  
              &:hover {
                 background-color: #fff;
-                box-shadow: 0px 0px 12px 1px black;
+
                 color: black;
  
                 & > a {
@@ -50,7 +50,7 @@ header {
  
           .activePage {
              background-color: #fff;
-             box-shadow: 0px 0px 12px 1px black;
+
              color: black;
  
              & > a {
@@ -88,13 +88,13 @@ header {
  
              &:focus {
                 background-color: rgb(255, 255, 255);
-                box-shadow: 0px 0px 12px 1px black;
+
                 outline: blue solid;
              }
  
              &:hover {
                 background-color: rgb(255, 255, 255);
-                box-shadow: 0px 0px 12px 1px black;
+
              }
           }
  

@@ -6,12 +6,12 @@ const AdminPage = () => {
       <form className={styles.container}>
          <h2>Добавить модель:</h2>
          <span className={styles.name}>
-            <label>Название:</label>
+            <label>Название</label>
             <input className={styles.forName} type="text" placeholder="< Укажите название карточки />"/>
          </span>
 
          <span className={ styles.image }>
-            <label>Фото:</label>
+            <label>Фото</label>
             <input type="url" placeholder="< Вставьте ссылку на фотографию />"/>
          </span>
          <div>

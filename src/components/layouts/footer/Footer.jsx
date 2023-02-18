@@ -13,8 +13,8 @@ const Footer = () => {
         </div>
         <div className={styles.links}>
           <a href="https://vk.com/zaambik" target="_blank"><img src={iconVk} width="55px"/></a>
-          <a href="#" target="_blank"><img src={iconGitHub} width="40px"/></a>
-          <a href="#" target="_blank"><img src={iconTg} width="40px"/></a>
+          <a href="https://github.com/Zaambik" target="_blank"><img src={iconGitHub} width="40px"/></a>
+          <a href="https://web.telegram.org/z/" target="_blank"><img src={iconTg} width="40px"/></a>
         </div>
       </div>
     </footer>

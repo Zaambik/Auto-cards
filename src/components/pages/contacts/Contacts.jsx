@@ -17,8 +17,8 @@ const Contacts = ({setActivePage}) => {
          <text class={ styles.list }>
             <h3>Телефон</h3>
             <ul>
-               <li>890345678</li>
-               <li>890345678</li>
+               <li>+7 (906) 774-29-83</li>
+               <li>+7 (906) 774-39-73</li>
             </ul>
             <h3>Почта</h3>
             <ul>

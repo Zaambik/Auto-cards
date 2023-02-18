@@ -155,7 +155,7 @@ const Catalog = ({ setActivePage }) => {
                         onChange={(event) => onMinInput(event)}
                         value={localMin === 0 ? '' : localMin}
                      />
-                     минимальная цена
+                     Минимальная цена
                   </label>
                   <label>
                      <input
@@ -166,7 +166,7 @@ const Catalog = ({ setActivePage }) => {
                         onChange={(event) => onMaxInput(event)}
                         value={localMax === 100000000 ? '' : localMax}
                      />
-                     максимальная цена
+                     Максимальная цена
                   </label>{' '}
                   <button
                      type="button"
@@ -188,7 +188,7 @@ const Catalog = ({ setActivePage }) => {
                </form>
             </section>
             {products.length === 0 ? (
-               <h3 className={styles.modelsNotFound}>модели не найдены</h3>
+               <h3 className={styles.modelsNotFound}>Модели не найдены</h3>
             ) : (
                <section className={styles.cards}>
                   {/* {user && <NewCard />} */}
