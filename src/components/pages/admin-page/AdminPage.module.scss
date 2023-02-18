@@ -45,13 +45,14 @@
 
       border: none;
       border-radius: 15px;
+      border: 1px solid black;
       
-      background-color: rgb(218, 218, 218);
+      // background-color: rgb(218, 218, 218);
 
       transition: all 0.5s ease-in-out;
 
       &:hover {
-         background-color: rgb(199, 199, 199);
+         background-color: rgb(218, 218, 218);
       }
    }
 
@@ -66,20 +67,20 @@
 
 
    select {
-   
-      background-color: rgb(218, 218, 218);
+
       border: none;
+      border: 1px solid black;
 
       width: 185px;
-      height: 33px;
-      border-radius: 50%;
+      height: 35px;
+      border-radius: 55%;
       border-radius: 15px;
 
       transition: all 0.2s ease-in-out;
 
 
       &:hover {
-         background-color: rgb(199, 199, 199);
+         background-color: rgb(218, 218, 218);
       }
    }
 
@@ -132,23 +133,26 @@
 
       font-size: 18px;
 
-      border: 2px solid;
+      border: 1px solid;
       border-color: rgb(0, 0, 0);
 
       margin-top: 40px;
       margin-bottom: 55px;
+
       display: flex;
+
       width: 300px;
       height: 45px;
+
       border-radius: 25px;
       cursor: pointer;
-      opacity: 0.4;
+
+      opacity: 0.5;
 
       transition: all 0.5s ease-in-out;
 
       &:hover {
          opacity: 1;
-
       }
    }  
 }
