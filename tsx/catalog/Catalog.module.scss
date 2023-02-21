@@ -107,7 +107,6 @@
             border: 3px solid rgb(249, 170, 67);
             background: inherit;
             cursor: pointer;
-            transition: all 0.2s ease-in-out;
 
             &:hover {
                background: rgb(249, 170, 67);
@@ -144,6 +143,19 @@
 
       > span {
          color: rgba(255, 255, 255, 0.9)
+      }
+   }
+
+   .noModels {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+
+      > a {
+         width: 300px;
+         height: 300px;
       }
    }
 }

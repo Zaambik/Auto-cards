@@ -27,7 +27,7 @@ const Card: FC<props> = ({ isUser, id, img, h, text, price }) => {
 
    const deleteModel = (id: string) => {
       if (confirm(`удалить модель: ${h}`)) {
-         token && dispatch(deleteOneProduct({ id, token}));
+         token && dispatch(deleteOneProduct({ id, token }));
       }
    };
 

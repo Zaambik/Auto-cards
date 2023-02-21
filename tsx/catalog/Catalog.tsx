@@ -1,36 +1,31 @@
 import { FC, useEffect, useState, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import qs from 'qs';
+import debounce from 'lodash.debounce';
 
 import Card from './card/Card';
+import NewCard from './new-card/NewCard';
 
-import { fetchProducts, getProducts, productsStatus, updateStatus } from '../../../redux/slice/productsSlice';
+import { fetchProducts, filterProducts, getProducts, productsStatus, updateStatus } from '../../../redux/slice/productsSlice';
 import { fetchFilters, filtersStatus, getFilters, updateFiltersStatus } from '../../../redux/slice/filtersSlice';
 import { useAppDispatch, useAppSelector } from '../../../hooks/useRedux';
 
-import imgCard1 from './img/card1.jpg';
-import imgCard2 from './img/card2.png';
-import imgCard3 from './img/card3.webp';
 import styles from './Catalog.module.scss';
-import debounce from 'lodash.debounce';
-import NewCard from './new-card/NewCard';
+import { deleteStatus, productTitle, updateDeleteStatus } from '../../../redux/slice/deleteProductSlice';
+import { isLoggedIn } from '../../../redux/slice/authSlice';
 
 type props = {
    setActivePage: (value: React.SetStateAction<string>) => void;
 };
 
 const Catalog: FC<props> = ({ setActivePage }) => {
-
-
-   //TEST
-   const [user, setUser] = useState(true)
-
-
-
+   const isUser = useAppSelector(isLoggedIn);
    const products = useAppSelector(getProducts);
    const statusProducts = useAppSelector(productsStatus);
    const statusFilters = useAppSelector(filtersStatus);
    const filters = useAppSelector(getFilters);
+   const deleteProductTitle = useAppSelector(productTitle);
+   const deleteProductStatus = useAppSelector(deleteStatus);
    const dispatch = useAppDispatch();
 
    const [typeFilter, setTypeFilter] = useState<string[]>([]);
@@ -164,6 +159,17 @@ const Catalog: FC<props> = ({ setActivePage }) => {
       }
    };
 
+   if (deleteProductStatus === 'success') {
+      alert(`${deleteProductTitle?.title} успешно удален`);
+      dispatch(updateDeleteStatus('loading'))
+      deleteProductTitle?._id && dispatch(filterProducts({ _id: deleteProductTitle._id }));
+   }
+
+   if (deleteProductStatus === 'error') {
+      alert('что-то пошло не так, попробуйте позже');
+      dispatch(updateDeleteStatus('loading'));
+   }
+
    if (statusProducts === 'error' || statusFilters === 'error') {
       alert('something went wrong, please try again later');
       navigate('/');
@@ -257,12 +263,15 @@ const Catalog: FC<props> = ({ setActivePage }) => {
                </form>
             </section>
             {products.length === 0 ? (
-               <h3 className={styles.modelsNotFound}>модели не найдены</h3>
+               <section className={styles.noModels}>
+                  <h3 className={styles.modelsNotFound}>модели не найдены</h3>
+                  {isUser && <NewCard />}
+               </section>
             ) : (
                <section className={styles.cards}>
-                  {user && <NewCard/>}
+                  {isUser && <NewCard />}
                   {products.map((item, index) => (
-                     <Card key={index} id={item._id} img={item.img} h={item.title} text={item.info} price={String(item.price)} user={user} />
+                     <Card key={index} isUser={isUser} id={item._id} img={item.img} h={item.title} text={item.info} price={String(item.price)} />
                   ))}
                </section>
             )}
