@@ -1,8 +1,9 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { urlAPI } from '../../api/api.constants';
 
 export const fetchFilters = createAsyncThunk('filters/fetchFilters', async () => {
-   const { data } = await axios.get(`http://localhost:8080/api/filters/`);
+   const { data } = await axios.get(`${urlAPI}/filters/`);
    return data;
 });
 

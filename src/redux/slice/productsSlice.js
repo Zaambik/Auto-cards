@@ -1,17 +1,18 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { urlAPI } from '../../api/api.constants';
 
 export const fetchProducts = createAsyncThunk('products/fetchProducts', async (params) => {
    const queryParams = params ? '?' : '';
    if (params.searchValue) {
-      const { data } = await axios.get(`http://localhost:4200/api/catalog${queryParams}searchTerm=${params.searchValue}`);
+      const { data } = await axios.get(`${urlAPI}/catalog${queryParams}searchTerm=${params.searchValue}`);
       return data;
    }
    const priceFilter = `priceFilter=${params?.priceMin === undefined ? 0 : params?.priceMin},${
       params?.priceMax === undefined ? 100000000 : params?.priceMax
    }&`;  
    const producerFilter = params?.producerFilter?.length !== 0 && params?.producerFilter?.length !== undefined ? `modelFilter=${params?.producerFilter}&` : '';
-   const { data } = await axios.get(`http://localhost:8080/api/catalog${queryParams}${producerFilter}${priceFilter}`);
+   const { data } = await axios.get(`${urlAPI}/catalog${queryParams}${producerFilter}${priceFilter}`);
    return data;
 });
 

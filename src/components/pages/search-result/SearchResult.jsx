@@ -1,16 +1,15 @@
-import { FC, useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../../hooks/useRedux';
 import { fetchProducts, getProducts, productsStatus, updateStatus } from '../../../redux/slice/productsSlice';
+import { isLoggedIn } from '../../../redux/slice/authSlice';
 
 import Card from './card/Card';
 
-import imgCard1 from './img/card1.jpg';
-import imgCard2 from './img/card2.png';
-import imgCard3 from './img/card3.webp';
 import styles from './SearchResult.module.scss';
 
 const SearchResult = ({ setActivePage }) => {
+   const isUser = useAppSelector(isLoggedIn);
    const [search, setSearch] = useState();
    const [searchParams, setSearchParams] = useSearchParams();
    const navigate = useNavigate();
@@ -39,7 +38,7 @@ const SearchResult = ({ setActivePage }) => {
    }
 
    if (status === 'loading') {
-      return <h2>...loading</h2>;
+      return <h2>Загрузка...</h2>;
    }
 
    return (
@@ -49,7 +48,7 @@ const SearchResult = ({ setActivePage }) => {
          </h2>
          <div className={styles.container}>
             {products.map((item, index) => (
-               <Card key={index} id={item._id} img={item.image} h={item.model} text={item.info} price={String(item.price)} />
+               <Card isUser={isUser} key={index} id={item._id} img={item.image} h={item.model} text={item.info} price={String(item.price)} />
             ))}
          </div>
       </>

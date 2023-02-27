@@ -1,8 +1,12 @@
 import { useState, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { IoEnterOutline } from 'react-icons/io5'
+import { useOutside } from '../../../hooks/useOutside'
+import { useAppSelector, useAppDispatch } from '../../../hooks/useRedux'
+import { isLoggedIn, login as loginUser, logout } from '../../../redux/slice/authSlice'
 
 import styles from './Header.module.scss';
-import imgLogo from '../../../assets/img/logo.png';
+import imgLogo from '../../../assets/img/logo.png'
 
 const pages = [
    { name: 'Home', path: '/', value: 'Главная' },
@@ -14,6 +18,13 @@ const Header = ({ activePage }) => {
    const navigate = useNavigate()
    const searchRef = useRef(null);
    const [localSearch, setLocalSearch] = useState('');
+   const [email, setEmail] = useState('');
+   const [password, setPassword] = useState('');
+
+   const isUser = useAppSelector(isLoggedIn);
+   const dispatch = useAppDispatch();
+
+   const { ref, isShow, setIsShow } = useOutside(false);
 
    const onSearchInput = (event) => {
       setLocalSearch(event.target.value);
@@ -42,13 +53,7 @@ const Header = ({ activePage }) => {
                <nav>
                   <ul className={styles.navbar}>
                      {pages.map((item, index) => (
-                        <li
-                           key={index}
-                           className={
-                              activePage.toLowerCase() === item.name.toLowerCase()
-                                 ? `${styles.activePage}`
-                                 : ''
-                           }>
+                        <li key={index} className={activePage.toLowerCase() === item.name.toLowerCase() ? `${styles.activePage}` : ''}>
                            <Link to={item.path}>{item.value}</Link>
                         </li>
                      ))}
@@ -73,6 +78,32 @@ const Header = ({ activePage }) => {
                   Поиск
                </button>
             </form>
+            {isUser ? (
+               <button className={styles.logout} type="button" onClick={() => dispatch(logout())}>
+                  выйти
+               </button>
+            ) : (
+               <button type="button" onClick={() => setIsShow(!isShow)}>
+                  {/* <img src={IoEnterOutline} width="30px" /> */}
+                  <IoEnterOutline/>
+               </button>
+            )}
+
+            {isShow && (
+               <div className={styles.wrapper} ref={ref}>
+                  <form className={styles.form}>
+                     <span>
+                        <input type="email" placeholder="name" value={email} onChange={(e) => setEmail(e.target.value)} />
+                     </span>
+                     <span>
+                        <input type="password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                     </span>
+                     <button type="button" onClick={() => dispatch(loginUser({ email, password }))}>
+                        Логин
+                     </button>
+                  </form>
+               </div>
+            )}
          </div>
       </header>
    );

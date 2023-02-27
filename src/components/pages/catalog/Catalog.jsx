@@ -4,14 +4,17 @@ import { useNavigate } from 'react-router-dom';
 import qs from 'qs';
 
 import Card from './card/Card';
+import NewCard from './new-card/NewCard'
 
 import { fetchProducts, getProducts, productsStatus, updateStatus } from '../../../redux/slice/productsSlice';
 import { fetchFilters, filtersStatus, getFilters } from '../../../redux/slice/filtersSlice';
+import { isLoggedIn } from '../../../redux/slice/authSlice';
 import { useAppDispatch, useAppSelector } from '../../../hooks/useRedux';
 
 import styles from './Catalog.module.scss';
 
 const Catalog = ({ setActivePage }) => {
+   const isUser = useAppSelector(isLoggedIn);
    const products = useAppSelector(getProducts);
    const statusProducts = useAppSelector(productsStatus);
    const statusFilters = useAppSelector(filtersStatus);
@@ -58,6 +61,8 @@ const Catalog = ({ setActivePage }) => {
          // console.log(String(params?.producerFilter).split(','));
          setPriceMin(params.minPrice !== undefined ? Number(params.minPrice) : 0);
          setPriceMax(params.maxPrice !== undefined ? Number(params.maxPrice) : 1000000000000);
+         setLocalMin(params.minPrice !== undefined ? Number(params.minPrice) : 0);
+         setLocalMax(params.maxPrice !== undefined ? Number(params.maxPrice) : 1000000000000);
 
          isSearch.current = true;
       }
@@ -116,7 +121,7 @@ const Catalog = ({ setActivePage }) => {
    }
 
    if (statusProducts === 'loading' || statusFilters === 'error') {
-      return <h2>Loading...</h2>;
+      return <h2>Загрузка...</h2>;
    }
 
    return (
@@ -188,12 +193,15 @@ const Catalog = ({ setActivePage }) => {
                </form>
             </section>
             {products.length === 0 ? (
-               <h3 className={styles.modelsNotFound}>Модели не найдены</h3>
-            ) : (
+               <section className={styles.noModels}>
+                  <h3 className={styles.modelsNotFound}>модели не найдены</h3>
+                  {isUser && <NewCard />}
+               </section>
+            ) : ( 
                <section className={styles.cards}>
-                  {/* {user && <NewCard />} */}
+                  {isUser && <NewCard />}
                   {products.map((item, index) => (
-                     <Card key={index} id={item._id} img={item.image} h={item.model} text={item.info} price={String(item.price)} />
+                     <Card isUser={isUser} key={index} id={item._id} img={item.image} h={item.model} text={item.info} price={String(item.price)} />
                   ))}
                </section>
             )}
