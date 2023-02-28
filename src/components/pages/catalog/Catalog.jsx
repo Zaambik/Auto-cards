@@ -146,7 +146,7 @@ const Catalog = ({ setActivePage }) => {
                      <div key={index}>
                         <legend>{item.type}</legend>
                         {item?.filters.map((el, index) => (
-                           <label key={index}>
+                           <label className={styles.checkBox} key={index}>
                               <input
                                  checked={producerFilter.includes(el.value) ? true : false}
                                  onClick={() => addFilter(item.type, el)}
@@ -166,7 +166,7 @@ const Catalog = ({ setActivePage }) => {
                      <input
                         className={styles.priceInput}
                         type="number"
-                        placeholder="0"
+                        placeholder="min price"
                         min="0"
                         onChange={(event) => onMinInput(event)}
                         value={localMin === 0 ? '' : localMin}
@@ -177,7 +177,7 @@ const Catalog = ({ setActivePage }) => {
                      <input
                         className={styles.priceInput}
                         type="number"
-                        placeholder="100000000"
+                        placeholder="max price"
                         max="100000000"
                         onChange={(event) => onMaxInput(event)}
                         value={localMax === 100000000 ? '' : localMax}
@@ -205,10 +205,12 @@ const Catalog = ({ setActivePage }) => {
             </section>
             {products.length === 0 ? (
                <section className={styles.noModels}>
-                  <h3 className={styles.modelsNotFound}>Модели не найдены</h3>
+                  <h3 className={styles.modelsNotFound}>
+                     {'< '}Модели не найдены{' />'}
+                  </h3>
                   {isUser && <NewCard />}
                </section>
-            ) : ( 
+            ) : (
                <section className={styles.cards}>
                   {isUser && <NewCard />}
                   {products.map((item, index) => (

@@ -199,10 +199,81 @@ header {
              }
  
              &:hover {
-                background-color: rgb(236, 55, 55);
+                background-color: rgb(25, 25, 25);
                 color: rgb(255, 255, 255);
+                border-color: #fff;
              }
     }
+
+    .loginForm {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      border-radius: 15px;
+    }
+
+    .email {
+      width: 120px;
+      height: 30px;
+
+      border : 0 none;
+      border-radius: 15px;
+    }
+
+   .pass {
+      width: 120px;
+      height: 30px;
+
+      margin-left: 10px;
+      margin-right: 10px;
+
+      border : 0 none;
+      border-radius: 15px;
+    }
+
+   .enterBtn {
+      width: 60px;
+      height: 30px;
+
+      margin-left: 10px;
+      margin-right: 10px;
+
+      border : 0 none;
+      border-radius: 10px;
+
+      cursor: pointer;
+
+      transition: 0.2s ease-in-out;
+
+      &:hover {
+         color: #fff;
+         background-color: rgb(25, 25, 25);
+         border: #fff 1px solid;
+
+         transition: 0.2s ease-in-out;
+    }
+   }
+
+   .preBtn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      border-radius: 10px;
+      width: 40px;
+      height: 40px;
+
+      background-color: rgb(255, 255, 255);
+
+         &:hover {
+         color: #fff;
+         background-color: rgb(25, 25, 25);
+         border: #fff 1px solid;
+
+         transition: 0.2s ease-in-out;
+         }
+   }
  }
  
  

@@ -113,5 +113,36 @@
    .modelsNotFound {
       color: #272727;
    }
+
+   .checkBox {
+      display: flex;
+      align-items: center;
+
+      width: 25px;
+      height: 25px;
+
+
+      gap: 10px;
+      background-color: rgb(0, 115, 238);
+      border-radius: 10px;
+      border: none;
+
+      transition: 0.2s ease-in-out;
+
+      &:hover {
+         scale: 1.07;
+
+         transition: 0.2s ease-in-out;
+      }
+   }
+
+   .priceInput {
+      height: 25px;
+      margin-bottom: 10px;
+
+      border-radius: 10px;
+
+      border: 1px solid black;
+   }
 }
 

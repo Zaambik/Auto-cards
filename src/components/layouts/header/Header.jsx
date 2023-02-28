@@ -83,22 +83,28 @@ const Header = ({ activePage }) => {
                   Выйти
                </button>
             ) : (
-               <button type="button" onClick={() => setIsShow(!isShow)}>
+               <button className={styles.preBtn} type="button" onClick={() => setIsShow(!isShow)}>
                   {/* <img src={IoEnterOutline} width="30px" /> */}
-                  <IoEnterOutline/>
+                  <IoEnterOutline />
                </button>
             )}
 
             {isShow && (
                <div className={styles.wrapper} ref={ref}>
-                  <form className={styles.form}>
+                  <form className={styles.loginForm}>
                      <span>
-                        <input type="email" placeholder="name" value={email} onChange={(e) => setEmail(e.target.value)} />
+                        <input className={styles.email} type="email" placeholder="Почта" value={email} onChange={(e) => setEmail(e.target.value)} />
                      </span>
                      <span>
-                        <input type="password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                        <input
+                           className={styles.pass}
+                           type="password"
+                           placeholder="Пароль"
+                           value={password}
+                           onChange={(e) => setPassword(e.target.value)}
+                        />
                      </span>
-                     <button type="button" onClick={() => dispatch(loginUser({ email, password }))}>
+                     <button className={styles.enterBtn} type="button" onClick={() => dispatch(loginUser({ email, password }))}>
                         Логин
                      </button>
                   </form>
