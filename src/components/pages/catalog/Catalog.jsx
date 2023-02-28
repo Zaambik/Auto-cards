@@ -6,12 +6,13 @@ import qs from 'qs';
 import Card from './card/Card';
 import NewCard from './new-card/NewCard'
 
-import { fetchProducts, getProducts, productsStatus, updateStatus } from '../../../redux/slice/productsSlice';
+import { fetchProducts, filterProducts, getProducts, productsStatus, updateStatus } from '../../../redux/slice/productsSlice';
 import { fetchFilters, filtersStatus, getFilters } from '../../../redux/slice/filtersSlice';
 import { isLoggedIn } from '../../../redux/slice/authSlice';
 import { useAppDispatch, useAppSelector } from '../../../hooks/useRedux';
 
 import styles from './Catalog.module.scss';
+import { deleteStatus, productTitle, updateDeleteStatus } from '../../../redux/slice/deleteProductSlice';
 
 const Catalog = ({ setActivePage }) => {
    const isUser = useAppSelector(isLoggedIn);
@@ -21,6 +22,10 @@ const Catalog = ({ setActivePage }) => {
    const filters = useAppSelector(getFilters);
    const dispatch = useAppDispatch('');
    const navigate = useNavigate('');
+
+      const deleteProductTitle = useAppSelector(productTitle);
+      const deleteProductStatus = useAppSelector(deleteStatus);
+
 
    const [producerFilter, setProducerFilter] = useState([]);
    const [priceMin, setPriceMin] = useState();
@@ -114,6 +119,12 @@ const Catalog = ({ setActivePage }) => {
       }
    };
 
+      if (deleteProductStatus === 'success') {
+         alert(`${deleteProductTitle?.title} успешно удален`);
+         dispatch(updateDeleteStatus('loading'));
+         deleteProductTitle?._id && dispatch(filterProducts({ _id: deleteProductTitle._id }));
+      }
+
    if (statusProducts === 'error' || statusFilters === 'error') {
       alert('something went wrong, please try again later');
       navigate('/');
@@ -194,7 +205,7 @@ const Catalog = ({ setActivePage }) => {
             </section>
             {products.length === 0 ? (
                <section className={styles.noModels}>
-                  <h3 className={styles.modelsNotFound}>модели не найдены</h3>
+                  <h3 className={styles.modelsNotFound}>Модели не найдены</h3>
                   {isUser && <NewCard />}
                </section>
             ) : ( 

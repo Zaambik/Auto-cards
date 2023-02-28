@@ -4,7 +4,7 @@ import { useAppDispatch, useAppSelector } from '../../../hooks/useRedux';
 import { fetchProducts, getProducts, productsStatus, updateStatus } from '../../../redux/slice/productsSlice';
 import { isLoggedIn } from '../../../redux/slice/authSlice';
 
-import Card from './card/Card';
+import Card from '../catalog/card/Card';
 
 import styles from './SearchResult.module.scss';
 

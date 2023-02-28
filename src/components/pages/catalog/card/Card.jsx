@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../../../hooks/useRedux';
 import { productTitle, deleteStatus, deleteOneProduct } from '../../../../redux/slice/deleteProductSlice';
+import { filterProducts } from '../../../../redux/slice/productsSlice';
 
 import styles from './Card.module.scss'
   
@@ -17,7 +18,7 @@ const Card = ({ id, img, h, text, price, isUser }) => {
 
       const deleteModel = (id) => {
          if (confirm(`удалить модель: ${h}`)) {
-            token && dispatch(deleteOneProduct({ id, token }));
+            token && dispatch(deleteOneProduct({ id, token }))
          }
       };
 
@@ -29,7 +30,7 @@ const Card = ({ id, img, h, text, price, isUser }) => {
         </Link>
         <h3>{h}</h3>{' '}
         {isUser && (
-           <button onClick={() => deleteModel(id)} type="button">
+           <button className={styles.delete} onClick={() => deleteModel(id)} type="button">
               {/* <img src={close} /> */}
               delete
            </button>

@@ -80,7 +80,7 @@ const Header = ({ activePage }) => {
             </form>
             {isUser ? (
                <button className={styles.logout} type="button" onClick={() => dispatch(logout())}>
-                  выйти
+                  Выйти
                </button>
             ) : (
                <button type="button" onClick={() => setIsShow(!isShow)}>

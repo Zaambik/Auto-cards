@@ -63,14 +63,6 @@ header {
           display: flex;
           gap: 25px;
  
-          // input[type="search"]::-webkit-search-cancel-button { 
-          //    display: none;
-          // }
- 
-          // input[type="search"]::-ms-clear { 
-          //    display: none;
-          // }
- 
           > .searchInput {
              position: relative;
              padding-left: 5%;
@@ -114,7 +106,7 @@ header {
 
             > .searchInput {
                 padding-left: 5%;
-
+                
                 width: 220px;
                 height: 40px;
 
@@ -188,6 +180,28 @@ header {
           cursor: pointer;
           background-color: transparent;
        }
+    }
+
+    .logout {
+             height: 40px;
+             width: 75px;
+ 
+             font-size: 16px;
+ 
+             border-radius: 10px;
+             background-color: rgb(255, 255, 255);
+ 
+             cursor: pointer;
+             transition: all 0.2s ease-in-out;
+ 
+             &:focus {
+                outline: blue solid;
+             }
+ 
+             &:hover {
+                background-color: rgb(236, 55, 55);
+                color: rgb(255, 255, 255);
+             }
     }
  }
  

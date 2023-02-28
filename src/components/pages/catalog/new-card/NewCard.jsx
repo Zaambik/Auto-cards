@@ -8,7 +8,7 @@ const NewCard = () => {
          <span className={styles.cardUp}>
             +
          </span>
-         <p>добавить модель</p>
+         <p> Добавить модель</p>
       </Link>
    );
 };

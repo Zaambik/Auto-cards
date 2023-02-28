@@ -28,6 +28,12 @@ export const productsSlice = createSlice({
       updateStatus: (state, action) => {
          state.status = action.payload;
       },
+      filterProducts: (
+         state,
+         action
+      ) => {
+         state.products = state.products.filter((item) => item._id !== action.payload._id);
+      },
    },
    extraReducers: (builder) => {
       builder.addCase(fetchProducts.pending, (state) => {
@@ -50,5 +56,6 @@ export const getProducts = (state) => state.products.products;
 export const productsStatus = (state) => state.products.status;
 
 export const { updateStatus } = productsSlice.actions;
+export const { filterProducts } = productsSlice.actions;
 
 export default productsSlice.reducer;
