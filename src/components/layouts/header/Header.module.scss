@@ -75,6 +75,7 @@ header {
              background-color: rgb(68, 68, 68);
              border-radius: 10px;
              border: 1px solid rgb(199, 193, 193);
+             color: #fff;
  
              transition: all 0.2s ease-in-out;
  
@@ -99,53 +100,7 @@ header {
                 }
              }
         }
-    
-        .searchContainer {
-            display: flex;
-            gap: 25px;
 
-            > .searchInput {
-                padding-left: 5%;
-                
-                width: 220px;
-                height: 40px;
-
-                font-size: 16px;
-
-                background-color: rgb(68, 68, 68);
-                border-radius: 10px;
-                border: 1px solid rgb(199, 193, 193);
-
-                transition: all 0.2s ease-in-out;
-
-                &:focus {
-                    background-color: rgb(255, 255, 255);
-                    box-shadow: 0px 0px 12px 1px black;
-                }
-
-                &:hover {
-                    background-color: rgb(255, 255, 255);
-                    box-shadow: 0px 0px 12px 1px black;
-                }
-            }
-
-            > .button {
-                height: 40px;
-                width: 75px;
-
-                font-size: 16px;
-
-                border-radius: 10px;
-                background-color: rgb(255, 255, 255);
-
-                outline: blue solid;
-             }
- 
-             &:hover {
-                background-color: rgb(255, 255, 255);
-
-             }
-          }
  
           > .button {
              height: 40px;
